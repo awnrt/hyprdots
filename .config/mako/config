@@ -1,0 +1,15 @@
+
+# Colors
+
+background-color=#0c101bcc
+text-color=#ebdbb2
+border-color=#fbf1c7
+progress-color=over #282828
+border-radius=0
+font=LiterationMono Nerd Font
+default-timeout=5000
+
+[urgency=high]
+border-color=#fab387
+ignore-timeout=1
+

@@ -1,0 +1,190 @@
+@import "theme.css";
+* {
+    border: none;
+    border-radius: 0;
+    font-family: IBMPlexMono; 
+    font-weight: normal;
+    font-size: 14px;
+    min-height: 0;
+}
+
+#waybar {
+    background: rgba(0,0,0,0.5);
+    /*background: @base;*/
+}
+
+tooltip {
+    background: rgba(0,0,0,0.2);
+}
+
+#workspaces {
+    margin-left: 5px;
+}
+
+#workspaces button {
+    color:rgba(100,100,100,0.5);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.3);
+    background: rgba(0, 0, 0,0.2);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+    margin-right: 2px;
+}
+
+#workspaces button.active {
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#window {
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#mpris {
+    color: @mauve;
+}
+
+#network {
+    margin-left: 15px;
+    color: @blue;
+}
+
+#custom-weather {
+    margin-right: 5px;
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#custom-pacman {
+    margin-right: 5px;
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+
+#custom-doppler {
+    margin-left: 15px;
+    color: @sky;
+}
+
+#pulseaudio {
+    margin-right: 5px;
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#wireplumber {
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#image {
+    margin-left: 3px;
+    margin-right: 8px;
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+
+#cpu {
+    margin-left: 15px;
+    color: @yellow;
+}
+
+#memory {
+    margin-right: 5px;
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#temperature {
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#custom-separator {
+    color: #BBBBBB;
+}
+
+#clock {
+    margin-right: 5px;
+    color: #FFFFFF;
+    border: 1px;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+    background: rgba(0, 0, 0,0.3);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#tray {
+    margin-right: 15px;
+    color: @red;
+}

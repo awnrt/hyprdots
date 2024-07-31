@@ -1,0 +1,4 @@
+doas pacman -Syu --noconfirm
+sleep 5
+hyprctl notify 5 10000 "rgb(ff1ea3)" "  Packages have been upgraded"
+pkill -RTMIN+8 waybar

@@ -1,0 +1,128 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 0,
+    "reload_style_on_change": true,
+    "modules-left": ["hyprland/workspaces","custom/separator","hyprland/window"],
+    "modules-center": [],
+    "modules-right": ["custom/pacman", "custom/weather","memory","temperature", "custom/separator", "image", "pulseaudio","wireplumber", "custom/separator", "clock","tray"],
+    
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50,
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹 $1",
+            "(.*)Mozilla Firefox": "󰈹 Firefox",
+            "nvim(.*)": " $1",
+            "(.*)spotify_player(.*)": "󰓇 Spotify",
+            "proxychains -q spoti(.*)": "󰓇 Spotify",
+            "(.*)Steam": "󰓓 Steam"
+        }
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{name}",
+	      "format-icons": {
+		        "1": "",
+		        "2": "",
+		        "3": "",
+		        "4": "",
+		        "5": "",
+		        "default": ""
+	      },
+    },
+    "network": {
+        "tooltip": false,
+        "interval": 5,
+        "format": "󰜮 {bandwidthDownBytes} 󰜷 {bandwidthUpBytes}",
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+	      "interval": 1,
+	      "format": "{:%H:%M:%S}",
+        "tooltip-format": "{:%a %d %b}"
+    },
+    "mpris": {
+        "tooltip": false,
+	      "format": "{player_icon} {artist} - {title}",
+	      "format-paused": "{status_icon} <b>{artist} - {title}</b>",
+	      "player-icons": {
+		    "default": "▶",
+        "spotify_player": "",
+	  },
+	      "status-icons": {
+		       "paused": "󰏤",
+           "stopped": "",
+	      },
+	      "ignored-players": ["firefox"]
+    },
+    "cpu": {
+        "interval": 10,
+	      "format": " {usage}%",       
+	      "tooltip": false,
+	      "spacing": 0
+    },
+    "memory": {
+        "tooltip": false,
+        "format": " {used:0.01f}Gb",
+	      "interval": 10,
+    },
+    "temperature": {
+        "tooltip": false,
+        "thermal-zone": 2,
+        "format": " {temperatureC}°C",
+	      "interval": 10,
+    },
+    "image":{
+        "exec":"~/.config/waybar/scripts/album_art.sh",
+       //"path": "/tmp/cover.jpeg",
+       "size": 32,
+        "interval": 5,  
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "format-icons": [" ", " ", " "]
+    },
+    "pulseaudio": {
+        "tooltip" : false,
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " ",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    },
+   "custom/weather" : {
+        "tooltip" : false,
+        "signal": 9,
+        "format" : "{}",
+        "interval" : 300,
+        "exec" : "~/.config/waybar/scripts/weather",
+        "on-click": "~/.config/waybar/scripts/hyprweather",
+        "on-click-right": "pkill -RTMIN+9 waybar"
+    },
+    "custom/pacman" : {
+        "tooltip" : false,
+        "signal": 8,
+        "format"  : "{}",
+        "interval"  : 18000,
+        "exec"  : "~/.config/waybar/scripts/pacpackages",
+        "on-click" : "~/.config/waybar/scripts/pacupdate",
+        "on-click-right" : "pkill -RTMIN+8 waybar"
+
+    },
+    "custom/separator" : {
+        "format" : " | ",
+    },
+    "custom/doppler" : {
+      "format": "🌅 ",
+      "on-click": "~/.config/waybar/scripts/hyprdoppler",
+    }
+}
+

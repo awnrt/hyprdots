@@ -1,0 +1,1 @@
+hyprctl dispatch exec "[float; size 1200 1200;]" '/home/awy/.config/waybar/scripts/doppler'

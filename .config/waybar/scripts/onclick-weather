@@ -1,0 +1,2 @@
+curl wttr.in
+read -p "Press Enter to continue..."
