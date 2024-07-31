@@ -31,7 +31,7 @@ doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface font-nam
 
 su - $PERMUSER -c "yes | fish $WORKDIRECTORY/fishrice"
 echo "[ -x /usr/bin/fish ] && SHELL=/usr/bin/fish exec fish" >> /home/$PERMUSER/.bashrc
-sudo -u $PERMUSER mkdir -p /home/$PERMUSER/.config/fish
+doas -u $PERMUSER mkdir -p /home/$PERMUSER/.config/fish
 
 #echo -e '\033c\e[35mwelcome to the system, master >w<\e[36m' > /etc/issue
 #sed -i "s/seat\ -n\ 3/seat -n 3 -l silent/g" /etc/runit/sv/seatd/run
