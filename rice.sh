@@ -20,11 +20,11 @@ doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/papes
 cd $WORKDIRECTORY
 git clone https://codeberg.org/awy/gruvbox-gtk-theme
 doas -u $PERMUSER cp -r $WORKDIRECTORY/gruvbox-gtk-theme/Gruvbox-Dark /home/$PERMUSER/.local/share/themes
-#doas -u $PERMUSER cp -r $WORKDIRECTORY/gruvbox-gtk-theme/Gruvbox-Icons /home/$PERMUSER/.local/share/icons
+doas -u $PERMUSER cp -r $WORKDIRECTORY/gruvbox-gtk-theme/Gruvbox-Icons /home/$PERMUSER/.local/share/icons
 rm -rf $WORKDIRECTORY/gruvbox-gtk-theme
 
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Dark"
-#doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface icon-theme "Gruvbox-Icons"
+doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface icon-theme "Gruvbox-Icons"
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu'
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface font-name "Ubuntu Nerd Font 11"
