@@ -29,3 +29,5 @@ mako
 unzip
 imv
 libnotify
+lf
+ffmpegthumbnailer
