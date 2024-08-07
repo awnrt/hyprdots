@@ -1,4 +1,5 @@
 set ifs "\n"
+set icons
 set sixel true
 set cleaner ~/.config/lf/cleaner
 set previewer ~/.config/lf/scope
