@@ -1,3 +1,4 @@
+set ifs "\n"
 set sixel true
 set cleaner ~/.config/lf/cleaner
 set previewer ~/.config/lf/scope
@@ -5,6 +6,7 @@ set previewer ~/.config/lf/scope
 cmd open ${{
   case $(file --mime-type "$(readlink -f $f)" -b) in
     text/*|application/json|inode/x-empty|application/x-subrip) $EDITOR $fx;;
+    video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
     *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
   esac
 }}
