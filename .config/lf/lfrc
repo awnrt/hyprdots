@@ -7,6 +7,7 @@ cmd open ${{
   case $(file --mime-type "$(readlink -f $f)" -b) in
     text/*|application/json|inode/x-empty|application/x-subrip) $EDITOR $fx;;
     video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+    audio/*|video/x-ms-asf) mpv --audio-display=no $f ;;
     *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
   esac
 }}
