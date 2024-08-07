@@ -31,3 +31,5 @@ imv
 libnotify
 lf
 ffmpegthumbnailer
+mediainfo
+bat
