@@ -6,7 +6,8 @@ wireplumber
 firefox
 wl-clipboard
 wofi
-kitty
+#kitty
+foot
 waybar
 neovim
 ttf-liberation-mono-nerd
@@ -33,3 +34,4 @@ lf
 ffmpegthumbnailer
 mediainfo
 bat
+chafa
