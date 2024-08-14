@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -d /sys/class/net/wg0 ]; then
+  doas wg-quick down wg0
+  hyprctl notify 5 5000 "rgb(ff0000)" "  VPN is disabled"
+else
+  doas wg-quick up wg0
+  hyprctl notify 5 5000 "rgb(008000)" "  VPN is enabled"
+fi

@@ -5,7 +5,7 @@
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces","custom/separator","hyprland/window"],
     "modules-center": [],
-    "modules-right": ["custom/pacman", "custom/weather","memory","temperature", "custom/separator", "image", "pulseaudio","wireplumber", "custom/separator", "clock","tray"],
+    "modules-right": ["network", "custom/weather","memory", "custom/separator", "image", "pulseaudio","wireplumber", "custom/separator", "clock","tray"],
     
     "hyprland/window": {
         "format": "{}",
@@ -36,9 +36,11 @@
 	      },
     },
     "network": {
+        "interface": "wg0",
         "tooltip": false,
-        "interval": 5,
-        "format": "󰜮 {bandwidthDownBytes} 󰜷 {bandwidthUpBytes}",
+        "format": "VPN",
+        "format-disconnected": "VPN",
+        "on-click": "~/.config/waybar/scripts/vpn-toggle",
     },
     "tray": {
         "spacing": 10
