@@ -1,24 +1,16 @@
 {
     "layer": "top",
-    "position": "bottom",
-    "spacing": 0,
+    "position": "top",
+    "spacing": 20,
     "reload_style_on_change": true,
-    "modules-left": ["hyprland/workspaces","custom/separator","hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["network", "custom/weather","memory", "custom/separator", "image", "pulseaudio","wireplumber", "custom/separator", "clock","tray"],
+    "modules-right": ["network", "custom/weather","memory", "pulseaudio","wireplumber", "clock","tray"],
     
     "hyprland/window": {
         "format": "{}",
         "max-length": 50,
         "separate-outputs": true,
-        "rewrite": {
-            "(.*) — Mozilla Firefox": "󰈹 $1",
-            "(.*)Mozilla Firefox": "󰈹 Firefox",
-            "nvim(.*)": " $1",
-            "(.*)spotify_player(.*)": "󰓇 Spotify",
-            "proxychains -q spoti(.*)": "󰓇 Spotify",
-            "(.*)Steam": "󰓓 Steam"
-        }
     },
 
     "hyprland/workspaces": {
@@ -46,8 +38,8 @@
         "spacing": 10
     },
     "clock": {
-	      "interval": 1,
-	      "format": "{:%H:%M:%S}",
+	      "interval": 60,
+	      "format": "{:%Y %b %d (%a) 🕙 %H:%M}",
         "tooltip-format": "{:%a %d %b}"
     },
     "mpris": {
@@ -88,7 +80,7 @@
         "interval": 5,  
     },
     "wireplumber": {
-        "format": "{icon}{volume}%",
+        "format": "{icon} {volume}%",
         "format-muted": "󰝟",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "format-icons": [" ", " ", " "]

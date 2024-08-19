@@ -13,6 +13,7 @@ pacman -S $DEPLIST --noconfirm
 usermod -aG seat,input,audio,video $PERMUSER
 doas -u $PERMUSER cp -r $WORKDIRECTORY/.config /home/$PERMUSER
 
+doas -u $PERMUSER mkdir -p /home/$PERMUSER/.cache/lf
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/themes
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/icons
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/papes
@@ -29,12 +30,6 @@ doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.wm.preferences but
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface font-name "Ubuntu Nerd Font 11"
 
-su - $PERMUSER -c "yes | fish $WORKDIRECTORY/fishrice"
-echo "[ -x /usr/bin/fish ] && SHELL=/usr/bin/fish exec fish" >> /home/$PERMUSER/.bashrc
-doas -u $PERMUSER mkdir -p /home/$PERMUSER/.config/fish
-
-#echo -e '\033c\e[35mwelcome to the system, master >w<\e[36m' > /etc/issue
-#sed -i "s/seat\ -n\ 3/seat -n 3 -l silent/g" /etc/runit/sv/seatd/run
 cd $WORKDIRECTORY
 cd ..
 rm -rf hyprdots

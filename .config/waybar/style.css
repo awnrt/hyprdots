@@ -2,15 +2,14 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: LiterationMono Nerd Font Propo; 
+    font-family: monospace; 
     font-weight: normal;
     font-size: 14px;
     min-height: 0;
 }
 
 #waybar {
-    background: rgba(0,0,0,0.5);
-    /*background: @base;*/
+    background: #282828; 
 }
 
 tooltip {
@@ -18,44 +17,21 @@ tooltip {
 }
 
 #workspaces {
-    margin-left: 5px;
+    margin-left: 1px;
 }
 
 #workspaces button {
-    color:rgba(100,100,100,0.5);
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.3);
-    background: rgba(0, 0, 0,0.2);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
-    margin-right: 2px;
+    color: #EBDBB2;
 }
 
 #workspaces button.active {
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #282828;
+    background: #EBDBB2;
 }
 
 #window {
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #EBDBB2;
+    margin-left: 15px;
 }
 
 #mpris {
@@ -63,149 +39,46 @@ tooltip {
 }
 
 #network {
-    margin-right: 5px;
-    color: @green;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #b8bb26;
 }
 
 #network.disconnected {
-    margin-right: 5px;
-    color: @red;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #fb4934;
 }
 
 #custom-weather {
-    margin-right: 5px;
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #EBDBB2;
 }
 
 #custom-pacman {
-    margin-right: 5px;
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
-}
-
-
-#custom-doppler {
-    margin-left: 15px;
-    color: @sky;
+    color: #EBDBB2;
 }
 
 #pulseaudio {
-    margin-right: 5px;
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #EBDBB2;
 }
 
 #wireplumber {
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #EBDBB2;
 }
-
-#image {
-    margin-left: 3px;
-    margin-right: 8px;
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-
 
 #cpu {
-    margin-left: 15px;
     color: @yellow;
 }
 
 #memory {
-    margin-right: 5px;
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #EBDBB2;
 }
 
 #temperature {
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
-}
-
-#custom-separator {
-    color: #BBBBBB;
+    color: #EBDBB2;
 }
 
 #clock {
-    margin-right: 5px;
-    color: #FFFFFF;
-    border: 1px;
-    border-style: solid;
-    border-color: rgba(100,100,100,0.5);
-    background: rgba(0, 0, 0,0.3);
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    padding: 8px;
+    color: #EBDBB2;
+    margin-right: 10px;
 }
 
 #tray {
-    margin-right: 15px;
     color: @red;
 }
