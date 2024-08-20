@@ -13,6 +13,10 @@ pacman -S $DEPLIST --noconfirm
 usermod -aG seat,input,audio,video $PERMUSER
 doas -u $PERMUSER cp -r $WORKDIRECTORY/.config /home/$PERMUSER
 doas -u $PERMUSER cp -a $WORKDIRECTORY/.zprofile /home/$PERMUSER
+doas -u $PERMUSER touch /home/$PERMUSER/.config/mpd/mpd.db 
+doas -u $PERMUSER touch /home/$PERMUSER/.config/mpd/mpd.log
+doas -u $PERMUSER touch /home/$PERMUSER/.config/mpd/mpd.pid 
+doas -u $PERMUSER touch /home/$PERMUSER/.config/mpd/mpdstate 
 
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.cache/lf
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/themes
