@@ -1,4 +1,3 @@
-#\!/bin/sh
 cd ~
 export XDG_RUNTIME_DIR="/tmp/hyprland"
 mkdir -p $XDG_RUNTIME_DIR
