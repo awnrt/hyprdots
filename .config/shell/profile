@@ -1,0 +1,2 @@
+export ZDOTDIR="$HOME/.config/zsh"
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec "/home/awy/.config/hypr/start.sh"
