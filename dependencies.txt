@@ -15,6 +15,7 @@ wireplumber
 libertinus-font 
 noto-fonts
 noto-fonts-emoji
+fontconfig
 
 #apps
 firefox
@@ -23,9 +24,6 @@ wofi
 foot
 waybar
 neovim
-obs-studio
-qt6-base
-qt6-wayland
 grim
 slurp
 zsh
