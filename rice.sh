@@ -24,19 +24,15 @@ doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/icons
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/papes
 
 cd $WORKDIRECTORY
-git clone https://codeberg.org/awy/gruvbox-gtk-theme
-git clone https://codeberg.org/awy/Adwaita-old
+git clone https://github.com/awnrt/gruvbox-gtk-theme
 doas -u $PERMUSER cp -r $WORKDIRECTORY/gruvbox-gtk-theme/Gruvbox-Dark /home/$PERMUSER/.local/share/themes
 doas -u $PERMUSER cp -r $WORKDIRECTORY/gruvbox-gtk-theme/Gruvbox-Icons /home/$PERMUSER/.local/share/icons
-doas -u $PERMUSER cp -r $WORKDIRECTORY/gruvbox-gtk-theme/Adwaita-old /home/$PERMUSER/.local/share/icons
 rm -rf $WORKDIRECTORY/gruvbox-gtk-theme
-rm -rf $WORKDIRECTORY/Adwaita-old
 
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface gtk-theme "Gruvbox-Dark"
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface icon-theme "Gruvbox-Icons"
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu'
-doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface cursor-theme "Adwaita-old"
-doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface font-name "Libertinus Serif 12"
+#doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface font-name "Libertinus Serif 12"
 
 cd $WORKDIRECTORY
 cd ..
