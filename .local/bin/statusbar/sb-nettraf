@@ -4,6 +4,13 @@
 # transmitted (TX) since the previous time this script ran. So if run every
 # second, gives network traffic per second.
 
+case $1 in
+	1) kitty -e bmon ;;
+	3) notify-send "🌐 Network traffic module" "🔻: Traffic received
+🔺: Traffic transmitted" ;;
+	6) kitty -e "$EDITOR" "$0" ;;
+esac
+
 update() {
     sum=0
     for arg; do
@@ -16,15 +23,7 @@ update() {
     printf %d\\n $(( sum - old ))
 }
 
-if [ ! -n "$1" ]; then
-  rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
-  tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
-  printf "🔻%4sB 🔺%4sB\\n" $(numfmt --to=iec $rx $tx)
-else
-  if [ "$1" -eq 1 ]; then
-    hyprctl dispatch exec "[float; size 1800 1300;]" 'kitty -e sh -c "bmon"'
-  elif [ "$1" -eq 3 ]; then
-    notify-send "🌐 Network traffic module" "🔻: Traffic received
-🔺: Traffic transmitted"
-  fi
-fi
+rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
+tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
+
+printf "🔻%4sB 🔺%4sB\\n" $(numfmt --to=iec $rx $tx)

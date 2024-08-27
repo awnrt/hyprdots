@@ -32,25 +32,19 @@ showweather() {
 }
 
 openterm() {
-  hyprctl dispatch exec "[float; size 1800 1300;]" 'kitty -e sh -c "curl wttr.in; read _"'
+  hyprctl dispatch exec "[float; size 1800 1300;]" 'kitty -e sh -c "curl wttr.in/Moscow; read _"'
 }
 
-sendnotif() {
-  notify-send "🌈 Weather module" "\- Left click for full forecast.
+case $1 in
+	1) hyprctl dispatch exec "[float; size 1800 1300;]" 'kitty -e sh -c "curl wttr.in/Moscow; read _"'
+ ;;
+	3) notify-send "🌈 Weather module" "\- Left click for full forecast.
 - Middle click to update forecast.
 ☔: Chance of rain/snow
 🥶: Daily low
-🌞: Daily high"
-}
+🌞: Daily high" ;;
+	6) kitty -e "$EDITOR" "$0" ;;
+esac
 
-if [ ! -n "$1" ]; then
-  getforecast
-  showweather
-else
-  if [ "$1" -eq 1 ]; then
-    openterm
-  elif [ "$1" -eq 3 ]; then
-    sendnotif
-  fi
-fi
-
+getforecast
+showweather

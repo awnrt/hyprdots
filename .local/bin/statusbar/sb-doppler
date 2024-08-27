@@ -4,14 +4,12 @@ showdoppler() {
   hyprctl dispatch exec "[float; size 800 800;]" 'curl -s https://meteoinfo.ru/hmc-output/rmap/phenomena.gif | imv - -H 1200 -W 1200'
 }
 
-if [ ! -n "$1" ]; then
-  echo 🌅
-else
-  if [ "$1" -eq 1 ]; then
-    showdoppler
-  elif [ "$1" -eq 3 ]; then
-    notify-send "🗺️ Doppler RADAR module" "\- Left click for local Doppler RADAR.
-- You need to manually edit the url in the script to change location."
-  fi
-fi
+case $1 in
+	1) showdoppler ;;
+	3) notify-send "🗺️ Doppler RADAR module" "\- Left click for local Doppler RADAR.
+- Middle click to update RADAR location.
+After $secs seconds, new clicks will also automatically update the doppler RADAR."  ;;
+	6) kitty -e "$EDITOR" "$0" ;;
+esac
 
+echo 🌅

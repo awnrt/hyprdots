@@ -18,14 +18,12 @@ case "$clock" in
 	"12") icon="🕛" ;;
 esac
 
-if [ ! -n "$1" ]; then
-  date "+%b %d (%a) $icon %H:%M"
-else
-  if [ "$1" -eq 1 ]; then
-    notify-send "This Month" "$(cal | sed "s/\<$(date +'%e'|tr -d ' ')\>/<b><span color='red'>&<\/span><\/b>/")" && notify-send "Appointments" "$(calcurse -d3)"
-  elif [ "$1" -eq 3 ]; then
-    notify-send "📅 Time/date module" "\- Left click to show upcoming appointments for the next three days via \`calcurse -d3\` and show the month via \`cal\`
-- Middle click opens calcurse if installed"
-  fi
-fi
+case $1 in
+	1) notify-send "This Month" "$(cal | sed "s/\<$(date +'%e'|tr -d ' ')\>/<b><span color='red'>&<\/span><\/b>/")" && notify-send "Appointments" "$(calcurse -d3)" ;;
+	2) kitty -e calcurse ;;
+	3) notify-send "📅 Time/date module" "\- Left click to show upcoming appointments for the next three days via \`calcurse -d3\` and show the month via \`cal\`
+- Middle click opens calcurse if installed" ;;
+	6) kitty -e "$EDITOR" "$0" ;;
+esac
 
+date "+%Y %b %d (%a) $icon %H:%M"

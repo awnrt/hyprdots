@@ -28,7 +28,8 @@
       "interval": 10,
       "on-click": "sb-memory 1",
       "on-click-right": "sb-memory 3",
-      "on-click-middle": "sb-memory 2"
+      "on-click-middle": "sb-memory 2",
+      "on-click-backward": "sb-memory 6",
     },
 
     "custom/doppler" : {
@@ -38,7 +39,8 @@
       "exec" : "sb-doppler",
       "on-click": "sb-doppler 1",
       "on-click-right": "sb-doppler 3",
-      "on-click-middle": "pkill -RTMIN+13 waybar"
+      "on-click-middle": "pkill -RTMIN+13 waybar",
+      "on-click-backward": "sb-doppler 6"
     },
 
     "custom/forecast" : {
@@ -49,7 +51,8 @@
       "interval" : 1800,
       "on-click": "sb-forecast 1",
       "on-click-right": "sb-forecast 3",
-      "on-click-middle": "pkill -RTMIN+5 waybar"
+      "on-click-middle": "pkill -RTMIN+5 waybar",
+      "on-click-backward": "sb-forecast 6"
     },
 
     "custom/nettraf" : {
@@ -59,7 +62,8 @@
       "exec" : "sb-nettraf",
       "interval" : 1,
       "on-click": "sb-nettraf 1",
-      "on-click-right": "sb-nettraf 3"
+      "on-click-right": "sb-nettraf 3",
+      "on-click-backward": "sb-nettraf 6"
     },
 
     "custom/microphone" : {
@@ -91,7 +95,9 @@
       "exec" : "sb-clock",
       "interval" : 60,
       "on-click": "sb-clock 1",
+      "on-click-middle": "sb-clock 2",
       "on-click-right": "sb-clock 3",
+      "on-click-backward": "sb-clock 6",
     },
 
     "custom/internet" : {
@@ -101,6 +107,7 @@
       "exec" : "sb-internet",
       "on-click": "sb-internet 1; pkill -RTMIN+4 waybar",
       "on-click-right": "sb-internet 3; pkill -RTMIN+4 waybar",
-      "on-click-middle": "pkill -RTMIN+4 waybar"
+      "on-click-middle": "pkill -RTMIN+4 waybar",
+      "on-click-backward": "sb-internet 6"
     }
 }
