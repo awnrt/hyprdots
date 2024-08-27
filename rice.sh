@@ -47,6 +47,7 @@ doas -u $PERMUSER touch /home/$PERMUSER/.ssh/config
 doas -u $PERMUSER touch /home/$PERMUSER/.gnupg/gpg-agent.conf
 echo 'Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"' > /home/$PERMUSER/.ssh/config
 echo 'enable-ssh-support' > /home/$PERMUSER/.gnupg/gpg-agent.conf
+echo 'pinentry-program /usr/bin/pinentry-curses' >> /home/$PERMUSER/.gnupg/gpg-agent.conf
 rc-update add sshd default
 rc-service sshd start
 
