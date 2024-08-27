@@ -2,11 +2,11 @@
 
 case $1 in
   1) notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)" ;;
-  2) kitty -e sh -c "btop" ;;
+  2) hyprctl dispatch exec 'kitty -e sh -c "btop"' ;;
   3) notify-send "🧠 Memory module" "\- Shows Memory Used/Total.
 - Click to show memory hogs.
 - Middle click to open btop." ;;
-  6) kitty -e "$EDITOR" "$0" ;;
+  6) hyprctl dispatch exec "kitty -e \"$EDITOR\" \"$0\"" ;;
 esac
 
 free --mebi | sed -n '2{p;q}' | awk '{printf ("🧠%2.2fGiB/%2.2fGiB\n", ( $3 / 1024), ($2 / 1024))}'

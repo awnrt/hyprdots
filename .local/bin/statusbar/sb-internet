@@ -6,10 +6,10 @@
 
 togglevpn() {
    if [ ! -n "$(cat /sys/class/net/wg0/operstate 2>/dev/null)" ];then
-     doas wg-quick up wg0
+     doas wg-quick up wg0 
      notify-send "🔒 Internet module" "Connected to VPN"
    else
-     doas wg-quick down wg0
+     doas wg-quick down wg0 
      notify-send "🔒 Internet module" "Disconnected from VPN"
    fi
 }
@@ -24,7 +24,7 @@ case $1 in
 🌐: ethernet working
 🔒: vpn is active
 " ;;
-	6) kitty -e "$EDITOR" "$0" ;;
+	6) hyprctl dispatch exec "kitty -e \"$EDITOR\" \"$0\"" ;;
 esac
 
 # Wifi

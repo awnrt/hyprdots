@@ -1,15 +1,22 @@
 #!/bin/sh
 
-showdoppler() {
-  hyprctl dispatch exec "[float; size 800 800;]" 'curl -s https://meteoinfo.ru/hmc-output/rmap/phenomena.gif | imv - -H 1200 -W 1200'
-}
+# Show a Doppler RADAR of a user's preferred location.
+secs=600 # Download a new doppler radar if one hasn't been downloaded in $secs seconds.
+radarloc="${XDG_CACHE_HOME:-$HOME/.cache}/radar"
+doppler="${XDG_CACHE_HOME:-$HOME/.cache}/doppler.gif"
+
+getdoppler() { curl -sL https://meteoinfo.ru/hmc-output/rmap/phenomena.gif > "$doppler" ;}
+
+showdoppler() { hyprctl dispatch exec "[float; size 800 800;]" "imv \"$doppler\" -H 1200 -W 1200" ;}
 
 case $1 in
-	1) showdoppler ;;
+	1) [ $(($(date '+%s') - $(stat -c %Y "$doppler"))) -gt "$secs" ] && getdoppler
+	showdoppler ;;
+  2) getdoppler && showdoppler ;;
 	3) notify-send "🗺️ Doppler RADAR module" "\- Left click for local Doppler RADAR.
 - Middle click to update RADAR location.
 After $secs seconds, new clicks will also automatically update the doppler RADAR."  ;;
-	6) kitty -e "$EDITOR" "$0" ;;
+	6) hyprctl dispatch exec "kitty -e \"$EDITOR\" \"$0\"" ;;
 esac
 
 echo 🌅

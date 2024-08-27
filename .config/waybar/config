@@ -36,10 +36,11 @@
       "tooltip": false,
       "format": "{}",
       "signal": 13,
+      "interval": 650,
       "exec" : "sb-doppler",
       "on-click": "sb-doppler 1",
       "on-click-right": "sb-doppler 3",
-      "on-click-middle": "pkill -RTMIN+13 waybar",
+      "on-click-middle": "sb-doppler 2",
       "on-click-backward": "sb-doppler 6"
     },
 
@@ -48,10 +49,10 @@
       "format": "{}",
       "signal": 5,
       "exec" : "sb-forecast",
-      "interval" : 1800,
+      "interval" : 18000,
       "on-click": "sb-forecast 1",
       "on-click-right": "sb-forecast 3",
-      "on-click-middle": "pkill -RTMIN+5 waybar",
+      "on-click-middle": "sb-forecast 2",
       "on-click-backward": "sb-forecast 6"
     },
 

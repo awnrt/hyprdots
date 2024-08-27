@@ -3,11 +3,11 @@
 # Prints the current microphone volume or  if muted.
 
 case $1 in
-	1) kitty -e pulsemixer ;;
+	1) hyprctl dispatch exec "kitty -e pulsemixer" ;;
 	3) notify-send "🎤 Microphone volume module" "\- Shows volume 🎙️,   if muted.
 - Middle click to mute.
 - Scroll to change." ;;
-	6) kitty -e "$EDITOR" "$0" ;;
+	6) hyprctl dispatch exec "kitty -e \"$EDITOR\" \"$0\"" ;;
 esac
 
 vol="$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)"
