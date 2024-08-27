@@ -15,6 +15,21 @@ noto-fonts
 noto-fonts-emoji
 fontconfig
 
+# waybar deps
+imv
+bmon
+calcurse
+libnotify
+dunst
+btop
+
+# lf deps
+lf
+ffmpegthumbnailer
+mediainfo
+bat
+chafa
+
 # apps
 kitty
 firefox
@@ -26,18 +41,9 @@ zsh
 zsh-autosuggestions
 mpv
 yt-dlp
-dunst
 unzip
-imv
-libnotify
-lf
-ffmpegthumbnailer
-mediainfo
-bat
-chafa
 
 # utilities
 gnupg
 openssh-openrc
 fakeroot
-btop
