@@ -1,11 +1,6 @@
 #!/bin/sh
-
+var=$1
 mic="$(wpctl get-volume @DEFAULT_SOURCE@)"
-
-# If muted, print 🔇 and exit.
-[ "$mic" != "${mic%\[MUTED\]}" ] && echo  && exit
-
-mic="${mic#Volume: }"
 
 split() {
 	# For ommiting the . without calling and external program.
@@ -14,11 +9,28 @@ split() {
 	printf '%s' "$@"
 }
 
+sig() {
+  if [ ! -n "$var" ]; then
+    if [ -n "$flag" ] ; then
+      echo "$icon"
+    else
+      case 1 in
+	      $((mic >= 1)) ) icon="🎙️" ;;
+	      * ) echo  && exit ;;
+      esac
+      echo "$icon $mic%"
+    fi
+  else
+    if [ "$var" -eq 3 ]; then
+      notify-send "🎤 Microphone module" "\- Shows volume 🎙️,  if muted.
+- Middle click to mute.
+- Scroll to change."
+    fi
+  fi
+  exit
+}
+
+[ "$mic" != "${mic%\[MUTED\]}" ] && icon="" && flag=1 && sig
+mic="${mic#Volume: }"
 mic="$(printf "%.0f" "$(split "$mic" ".")")"
-
-case 1 in
-	$((mic >= 1)) ) icon="🎙️" ;;
-	* ) echo  && exit ;;
-esac
-
-echo "$icon $mic%"
+sig

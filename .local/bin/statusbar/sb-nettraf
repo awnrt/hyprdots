@@ -16,7 +16,15 @@ update() {
     printf %d\\n $(( sum - old ))
 }
 
-rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
-tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
-
-printf "🔻%4sB 🔺%4sB\\n" $(numfmt --to=iec $rx $tx)
+if [ ! -n "$1" ]; then
+  rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
+  tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
+  printf "🔻%4sB 🔺%4sB\\n" $(numfmt --to=iec $rx $tx)
+else
+  if [ "$1" -eq 1 ]; then
+    hyprctl dispatch exec "[float; size 1800 1300;]" 'kitty -e sh -c "bmon"'
+  elif [ "$1" -eq 3 ]; then
+    notify-send "🌐 Network traffic module" "🔻: Traffic received
+🔺: Traffic transmitted"
+  fi
+fi

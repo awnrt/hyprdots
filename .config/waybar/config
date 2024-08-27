@@ -5,7 +5,7 @@
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["custom/memory","custom/doppler","custom/forecast","custom/nettraf","custom/microphone","custom/volume","custom/clock","custom/internet"],
+    "modules-right": ["custom/memory","custom/doppler","custom/forecast","custom/nettraf","custom/microphone","custom/volume","custom/clock","custom/internet","tray"],
     
     "hyprland/window": {
         "format": "{}",
@@ -58,7 +58,8 @@
       "signal": 16,
       "exec" : "sb-nettraf",
       "interval" : 1,
-      "on-click": "",
+      "on-click": "sb-nettraf 1",
+      "on-click-right": "sb-nettraf 3"
     },
 
     "custom/microphone" : {
@@ -66,9 +67,10 @@
       "format": "{}",
       "signal": 8,
       "exec" : "sb-microphone",
-      "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle; pkill -RTMIN+8 waybar",
+      "on-click-middle": "wpctl set-mute @DEFAULT_SOURCE@ toggle; pkill -RTMIN+8 waybar",
       "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 0.01+; pkill -RTMIN+8 waybar",
       "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 0.01-; pkill -RTMIN+8 waybar",
+      "on-click-right": "sb-microphone 3",
     },
 
     "custom/volume" : {
@@ -76,9 +78,10 @@
       "format": "{}",
       "signal": 10,
       "exec" : "sb-volume",
-      "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 waybar",
+      "on-click-middle": "wpctl set-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 waybar",
       "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 0.01+; pkill -RTMIN+10 waybar",
       "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 0.01-; pkill -RTMIN+10 waybar",
+      "on-click-right": "sb-volume 3",
     },
 
     "custom/clock" : {
@@ -87,7 +90,8 @@
       "signal": 1,
       "exec" : "sb-clock",
       "interval" : 60,
-      "on-click": "",
+      "on-click": "sb-clock 1",
+      "on-click-right": "sb-clock 3",
     },
 
     "custom/internet" : {

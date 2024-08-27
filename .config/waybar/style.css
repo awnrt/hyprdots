@@ -39,5 +39,9 @@ tooltip {
 }
 
 #custom-internet {
+  margin-right: 5px;
+}
+
+#tray {
   margin-right: 15px;
 }
