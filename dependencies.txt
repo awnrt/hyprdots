@@ -12,7 +12,7 @@ wireplumber
 # fonts
 ttf-jetbrains-mono-nerd
 ttf-liberation-mono-nerd
-noto-fonts
+ttf-ubuntu-font-family
 noto-fonts-emoji
 fontconfig
 
