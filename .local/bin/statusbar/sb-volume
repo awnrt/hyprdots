@@ -1,6 +1,21 @@
 #!/bin/sh
-var=$1
-vol="$(wpctl get-volume @DEFAULT_SINK@)"
+
+# Prints the current volume or 🔇 if muted.
+
+case $1 in
+	1) kitty -e pulsemixer ;;
+	3) notify-send "📢 Volume module" "\- Shows volume 🔊, 🔇 if muted.
+- Middle click to mute.
+- Scroll to change." ;;
+	6) kitty -e "$EDITOR" "$0" ;;
+esac
+
+vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+
+# If muted, print 🔇 and exit.
+[ "$vol" != "${vol%\[MUTED\]}" ] && echo 🔇 && exit
+
+vol="${vol#Volume: }"
 
 split() {
 	# For ommiting the . without calling and external program.
@@ -9,30 +24,13 @@ split() {
 	printf '%s' "$@"
 }
 
-sig() {
-  if [ ! -n "$var" ]; then
-    if [ -n "$flag" ] ; then
-      echo "$icon"
-    else
-      case 1 in
-	      $((vol >= 70)) ) icon="🔊" ;;
-	      $((vol >= 30)) ) icon="🔉" ;;
-	      $((vol >= 1)) ) icon="🔈" ;;
-	      * ) echo 🔇 && exit ;;
-      esac
-      echo "$icon $vol%"
-    fi
-  else
-    if [ "$var" -eq 3 ]; then
-      notify-send "📢 Volume module" "\- Shows volume 🔊, 🔇 if muted.
-- Middle click to mute.
-- Scroll to change."
-    fi
-  fi
-  exit
-}
-
-[ "$vol" != "${vol%\[MUTED\]}" ] && icon="🔇" && flag=1 && sig
-vol="${vol#Volume: }"
 vol="$(printf "%.0f" "$(split "$vol" ".")")"
-sig
+
+case 1 in
+	$((vol >= 70)) ) icon="🔊" ;;
+	$((vol >= 30)) ) icon="🔉" ;;
+	$((vol >= 1)) ) icon="🔈" ;;
+	* ) echo 🔇 && exit ;;
+esac
+
+echo "$icon $vol%"

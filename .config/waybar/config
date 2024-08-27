@@ -71,10 +71,12 @@
       "format": "{}",
       "signal": 8,
       "exec" : "sb-microphone",
+      "on-click": "sb-microphone 1",
       "on-click-middle": "wpctl set-mute @DEFAULT_SOURCE@ toggle; pkill -RTMIN+8 waybar",
       "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 0.01+; pkill -RTMIN+8 waybar",
       "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 0.01-; pkill -RTMIN+8 waybar",
       "on-click-right": "sb-microphone 3",
+      "on-click-backward": "sb-microphone 6"
     },
 
     "custom/volume" : {
@@ -82,10 +84,12 @@
       "format": "{}",
       "signal": 10,
       "exec" : "sb-volume",
+      "on-click": "sb-volume 1",
       "on-click-middle": "wpctl set-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 waybar",
       "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 0.01+; pkill -RTMIN+10 waybar",
       "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 0.01-; pkill -RTMIN+10 waybar",
       "on-click-right": "sb-volume 3",
+      "on-click-backward": "sb-volume 6"
     },
 
     "custom/clock" : {
