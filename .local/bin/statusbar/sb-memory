@@ -8,7 +8,9 @@ else
   elif [ "$1" -eq 2 ]; then
     hyprctl dispatch exec "[float; size 1800 1300;]" 'kitty -e sh -c "btop"'
   elif [ "$1" -eq 3 ]; then
-    notify-send "🧠 Memory module" "\- Shows Memory Used/Total."
+    notify-send "🧠 Memory module" "\- Shows Memory Used/Total.
+- Click to show memory hogs.
+- Middle click to open btop."
   fi
 fi
 

@@ -5,7 +5,8 @@ showdoppler() {
 }
 
 sendnotif() {
-  notify-send "🌦️ Doppler RADAR" "Left click for full forecast."
+  notify-send "🗺️ Doppler RADAR module" "\- Left click for local Doppler RADAR.
+- Middle click to update RADAR location."
 }
 if [ ! -n "$1" ]; then
   echo 🌅

@@ -22,6 +22,13 @@ else
       notify-send "🔒 Internet module" "Disconnected from VPN"
     fi
   elif [ "$1" -eq 3 ]; then
-    notify-send "🌐 Internet module" "\- Click to connect to vpn"
+    notify-send "🌐 Internet module" "\- Click to connect
+❌: wifi disabled
+📡: no wifi connection
+📶: wifi connection with quality
+❎: no ethernet
+🌐: ethernet working
+🔒: vpn is active
+"
   fi
 fi

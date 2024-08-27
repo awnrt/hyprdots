@@ -36,7 +36,11 @@ openterm() {
 }
 
 sendnotif() {
-  notify-send "🌈 Weather module" "Left click for full forecast."
+  notify-send "🌈 Weather module" "\- Left click for full forecast.
+- Middle click to update forecast.
+☔: Chance of rain/snow
+🥶: Daily low
+🌞: Daily high"
 }
 
 if [ ! -n "$1" ]; then
