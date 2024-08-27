@@ -42,7 +42,7 @@ openterm() {
 }
 
 case $1 in
-	1) hyprctl dispatch exec "[float; size 1450 1100;]" "kitty -e less -Sfr \"$weatherreport\""
+	1) hyprctl dispatch exec "[float; size 1700 1100;]" "kitty -e less -Sfr \"$weatherreport\""
  ;;
   2) getforecast && showweather ;;
 	3) notify-send "🌈 Weather module" "\- Left click for full forecast.
