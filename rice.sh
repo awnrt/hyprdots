@@ -41,14 +41,14 @@ cp -rf fast-syntax-highlighting /usr/share/zsh/plugins
 cd ..
 rm -rf hyprdots 
 
-#doas -u $PERMUSER mkdir -p /home/$PERMUSER/.ssh
-#doas -u $PERMUSER mkdir -p /home/$PERMUSER/.gnupg
-#doas -u $PERMUSER touch /home/$PERMUSER/.ssh/config
-#doas -u $PERMUSER touch /home/$PERMUSER/.gnupg/gpg-agent.conf
-#echo 'Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"' > /home/$PERMUSER/.ssh/config
-#echo 'enable-ssh-support' > /home/$PERMUSER/.gnupg/gpg-agent.conf
-#rc-update add sshd default
-#rc-service sshd start
+doas -u $PERMUSER mkdir -p /home/$PERMUSER/.ssh
+doas -u $PERMUSER mkdir -p /home/$PERMUSER/.gnupg
+doas -u $PERMUSER touch /home/$PERMUSER/.ssh/config
+doas -u $PERMUSER touch /home/$PERMUSER/.gnupg/gpg-agent.conf
+echo 'Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"' > /home/$PERMUSER/.ssh/config
+echo 'enable-ssh-support' > /home/$PERMUSER/.gnupg/gpg-agent.conf
+rc-update add sshd default
+rc-service sshd start
 
 chsh -s /bin/zsh $PERMUSER
 
