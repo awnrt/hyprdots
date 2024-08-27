@@ -10,8 +10,7 @@ pipewire-alsa
 wireplumber
 
 # fonts
-libertinus-font 
-noto-fonts
+ttf-jetbrains-mono-nerd
 noto-fonts-emoji
 fontconfig
 
