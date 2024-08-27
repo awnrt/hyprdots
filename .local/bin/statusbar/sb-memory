@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ ! -n "$1" ]; then
+  free --mebi | sed -n '2{p;q}' | awk '{printf ("🧠%2.2fGiB/%2.2fGiB\n", ( $3 / 1024), ($2 / 1024))}'
+else
+  if [ "$1" -eq 1 ]; then
+    notify-send "🧠 Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)"
+  elif [ "$1" -eq 2 ]; then
+    hyprctl dispatch exec "[float; size 1800 1300;]" 'kitty -e sh -c "btop"'
+  elif [ "$1" -eq 3 ]; then
+    notify-send "🧠 Memory module" "\- Shows Memory Used/Total."
+  fi
+fi
+
+

@@ -1,35 +1,31 @@
-#hyprland
+# Hyprland deps
 hyprland
 xdg-desktop-portal-hyprland
 hyprpaper
-hyprlock
-hypridle
 
-#sound
+# sound
 pipewire
 pipewire-pulse
 pipewire-alsa
 wireplumber
 
-#fonts
+# fonts
 libertinus-font 
 noto-fonts
 noto-fonts-emoji
 fontconfig
 
-#apps
+# apps
+kitty
 firefox
 wl-clipboard
-wofi
-foot
-waybar
 neovim
 grim
 slurp
 zsh
+zsh-autosuggestions
 mpv
 yt-dlp
-fastfetch
 mako
 unzip
 imv
@@ -40,3 +36,8 @@ mediainfo
 bat
 chafa
 
+# utilities
+gnupg
+openssh-openrc
+fakeroot
+btop

@@ -1,1 +1,0 @@
-curl -s "https://meteoinfo.ru/hmc-output/rmap/phenomena.gif" | imv - -H 1200 -W 1200

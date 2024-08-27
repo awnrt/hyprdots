@@ -5,7 +5,7 @@
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["network", "custom/weather","memory", "pulseaudio","wireplumber", "clock","tray"],
+    "modules-right": ["custom/memory","custom/doppler","custom/forecast","custom/nettraf","custom/microphone","custom/volume","custom/clock","custom/internet"],
     
     "hyprland/window": {
         "format": "{}",
@@ -18,105 +18,85 @@
         "all-outputs": true,
         "on-click": "activate",
         "format": "{name}",
-	      "format-icons": {
-		        "1": "",
-		        "2": "",
-		        "3": "",
-		        "4": "",
-		        "5": "",
-		        "default": ""
-	      },
     },
-    "network": {
-        "interface": "wg0",
-        "tooltip": false,
-        "format": "VPN",
-        "format-disconnected": "VPN",
-        "on-click": "~/.config/waybar/scripts/vpn-toggle",
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-	      "interval": 60,
-	      "format": "{:%Y %b %d (%a) 🕙 %H:%M}",
-        "tooltip-format": "{:%a %d %b}"
-    },
-    "mpris": {
-        "tooltip": false,
-	      "format": "{player_icon} {artist} - {title}",
-	      "format-paused": "{status_icon} <b>{artist} - {title}</b>",
-	      "player-icons": {
-		    "default": "▶",
-        "spotify_player": "",
-	  },
-	      "status-icons": {
-		       "paused": "󰏤",
-           "stopped": "",
-	      },
-	      "ignored-players": ["firefox"]
-    },
-    "cpu": {
-        "interval": 10,
-	      "format": " {usage}%",       
-	      "tooltip": false,
-	      "spacing": 0
-    },
-    "memory": {
-        "tooltip": false,
-        "format": " {used:0.01f}Gb",
-	      "interval": 10,
-    },
-    "temperature": {
-        "tooltip": false,
-        "thermal-zone": 2,
-        "format": " {temperatureC}°C",
-	      "interval": 10,
-    },
-    "image":{
-        "exec":"~/.config/waybar/scripts/album_art.sh",
-       //"path": "/tmp/cover.jpeg",
-       "size": 32,
-        "interval": 5,  
-    },
-    "wireplumber": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "format-icons": [" ", " ", " "]
-    },
-    "pulseaudio": {
-        "tooltip" : false,
-        "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " ",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-    },
-   "custom/weather" : {
-        "tooltip" : false,
-        "signal": 9,
-        "format" : "{}",
-        "interval" : 300,
-        "exec" : "~/.config/waybar/scripts/weather",
-        "on-click": "~/.config/waybar/scripts/hyprweather",
-        "on-click-right": "pkill -RTMIN+9 waybar"
-    },
-    "custom/pacman" : {
-        "tooltip" : false,
-        "signal": 8,
-        "format"  : "{}",
-        "interval"  : 18000,
-        "exec"  : "~/.config/waybar/scripts/pacpackages",
-        "on-click" : "~/.config/waybar/scripts/pacupdate",
-        "on-click-right" : "pkill -RTMIN+8 waybar"
 
+    "custom/memory" : {
+      "tooltip": false,
+      "format": "{}",
+      "signal": 14,
+      "exec" : "sb-memory",
+      "interval": 10,
+      "on-click": "sb-memory 1",
+      "on-click-right": "sb-memory 3",
+      "on-click-middle": "sb-memory 2"
     },
-    "custom/separator" : {
-        "format" : " | ",
-    },
+
     "custom/doppler" : {
-      "format": "🌅 ",
-      "on-click": "~/.config/waybar/scripts/hyprdoppler",
+      "tooltip": false,
+      "format": "{}",
+      "signal": 13,
+      "exec" : "sb-doppler",
+      "on-click": "sb-doppler 1",
+      "on-click-right": "sb-doppler 3",
+      "on-click-middle": "pkill -RTMIN+13 waybar"
+    },
+
+    "custom/forecast" : {
+      "tooltip": false,
+      "format": "{}",
+      "signal": 5,
+      "exec" : "sb-forecast",
+      "interval" : 1800,
+      "on-click": "sb-forecast 1",
+      "on-click-right": "sb-forecast 3",
+      "on-click-middle": "pkill -RTMIN+5 waybar"
+    },
+
+    "custom/nettraf" : {
+      "tooltip": false,
+      "format": "{}",
+      "signal": 16,
+      "exec" : "sb-nettraf",
+      "interval" : 1,
+      "on-click": "",
+    },
+
+    "custom/microphone" : {
+      "tooltip": false,
+      "format": "{}",
+      "signal": 8,
+      "exec" : "sb-microphone",
+      "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle; pkill -RTMIN+8 waybar",
+      "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 0.01+; pkill -RTMIN+8 waybar",
+      "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 0.01-; pkill -RTMIN+8 waybar",
+    },
+
+    "custom/volume" : {
+      "tooltip": false,
+      "format": "{}",
+      "signal": 10,
+      "exec" : "sb-volume",
+      "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 waybar",
+      "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 0.01+; pkill -RTMIN+10 waybar",
+      "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 0.01-; pkill -RTMIN+10 waybar",
+    },
+
+    "custom/clock" : {
+      "tooltip": false,
+      "format": "{}",
+      "signal": 1,
+      "exec" : "sb-clock",
+      "interval" : 60,
+      "on-click": "",
+    },
+
+    "custom/internet" : {
+      "tooltip": false,
+      "format": "{}",
+      "signal": 4,
+      "exec" : "sb-internet",
+      "on-click": "sb-internet 1; pkill -RTMIN+4 waybar",
+      "on-click-right": "sb-internet 3; pkill -RTMIN+4 waybar",
+      "on-click-middle": "pkill -RTMIN+4 waybar"
     }
 }
-

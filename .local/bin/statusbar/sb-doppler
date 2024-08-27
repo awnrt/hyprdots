@@ -1,0 +1,19 @@
+#!/bin/sh
+
+showdoppler() {
+  hyprctl dispatch exec "[float; size 800 800;]" 'curl -s https://meteoinfo.ru/hmc-output/rmap/phenomena.gif | imv - -H 1200 -W 1200'
+}
+
+sendnotif() {
+  notify-send "🌦️ Doppler RADAR" "Left click for full forecast."
+}
+if [ ! -n "$1" ]; then
+  echo 🌅
+else
+  if [ "$1" -eq 1 ]; then
+    showdoppler
+  elif [ "$1" -eq 3 ]; then
+    sendnotif
+  fi
+fi
+

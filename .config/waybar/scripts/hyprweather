@@ -1,1 +1,0 @@
-hyprctl dispatch exec "[float; size 1430 1100;]" 'foot "/home/awy/.config/waybar/scripts/onclick-weather"'

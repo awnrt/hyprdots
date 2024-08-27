@@ -1,2 +1,0 @@
-doas pacman -Sy > /dev/null 2>&1
-pacman -Qu | grep -Fcv "[ignored]" | sed "s/^/📦 /;s/^📦 0$//g"

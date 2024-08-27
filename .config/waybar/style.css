@@ -1,14 +1,14 @@
-@import "theme.css";
 * {
     border: none;
     border-radius: 0;
-    font-family: monospace; 
+    font-family: JetBrainsMono Nerd Font Propo; 
     font-weight: normal;
     font-size: 14px;
     min-height: 0;
 }
 
 #waybar {
+    color: #EBDBB2;
     background: #282828; 
 }
 
@@ -34,51 +34,14 @@ tooltip {
     margin-left: 15px;
 }
 
-#mpris {
-    color: @mauve;
+#custom-nettraf {
+  min-width: 120px;
 }
 
-#network {
-    color: #b8bb26;
+#custom-volume {
+  min-width: 60px;
 }
 
-#network.disconnected {
-    color: #fb4934;
-}
-
-#custom-weather {
-    color: #EBDBB2;
-}
-
-#custom-pacman {
-    color: #EBDBB2;
-}
-
-#pulseaudio {
-    color: #EBDBB2;
-}
-
-#wireplumber {
-    color: #EBDBB2;
-}
-
-#cpu {
-    color: @yellow;
-}
-
-#memory {
-    color: #EBDBB2;
-}
-
-#temperature {
-    color: #EBDBB2;
-}
-
-#clock {
-    color: #EBDBB2;
-    margin-right: 10px;
-}
-
-#tray {
-    color: @red;
+#custom-internet {
+  margin-right: 15px;
 }

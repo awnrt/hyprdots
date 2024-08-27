@@ -1,0 +1,24 @@
+#!/bin/sh
+
+mic="$(wpctl get-volume @DEFAULT_SOURCE@)"
+
+# If muted, print 🔇 and exit.
+[ "$mic" != "${mic%\[MUTED\]}" ] && echo  && exit
+
+mic="${mic#Volume: }"
+
+split() {
+	# For ommiting the . without calling and external program.
+	IFS=$2
+	set -- $1
+	printf '%s' "$@"
+}
+
+mic="$(printf "%.0f" "$(split "$mic" ".")")"
+
+case 1 in
+	$((mic >= 1)) ) icon="🎙️" ;;
+	* ) echo  && exit ;;
+esac
+
+echo "$icon $mic%"

@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Show wifi 📶 and percent strength or 📡 if none.
+# Show 🌐 if connected to ethernet or ❎ if none.
+# Show 🔒 if a vpn connection is active
+
+printconnection() {
+  [ "$(cat /sys/class/net/eth0/operstate 2>/dev/null)" = 'up' ] && ethericon="🌐" || ethericon="❎"
+  [ -n "$(cat /sys/class/net/wg0/operstate 2>/dev/null)" ] && tunicon=" 🔒"
+  printf "%s%s%s\n" "$wifiicon" "$ethericon" "$tunicon"
+}
+
+if [ ! -n "$1" ]; then
+  printconnection
+else
+  if [ "$1" -eq 1 ]; then
+    if [ ! -n "$(cat /sys/class/net/wg0/operstate 2>/dev/null)" ];then
+      doas wg-quick up wg0
+      notify-send "🔒 Internet module" "Connected to VPN"
+    else
+      doas wg-quick down wg0
+      notify-send "🔒 Internet module" "Disconnected from VPN"
+    fi
+  elif [ "$1" -eq 3 ]; then
+    notify-send "🌐 Internet module" "\- Click to connect to vpn"
+  fi
+fi

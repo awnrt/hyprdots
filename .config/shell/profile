@@ -1,2 +1,12 @@
+export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
 export ZDOTDIR="$HOME/.config/zsh"
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec "/home/awy/.config/hypr/start.sh"
+export BROWSER="firefox"
+export EDITOR="nvim"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
+
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec "$XDG_CONFIG_HOME/hypr/start"
+
