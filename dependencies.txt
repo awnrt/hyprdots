@@ -23,6 +23,7 @@ calcurse
 libnotify
 dunst
 btop
+pulsemixer
 
 # lf deps
 lf
