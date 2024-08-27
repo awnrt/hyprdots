@@ -11,6 +11,7 @@ wireplumber
 
 # fonts
 ttf-jetbrains-mono-nerd
+noto-fonts
 noto-fonts-emoji
 fontconfig
 
