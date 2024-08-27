@@ -16,6 +16,7 @@ noto-fonts-emoji
 fontconfig
 
 # waybar deps
+waybar
 imv
 bmon
 calcurse
