@@ -21,18 +21,16 @@ doas -u $PERMUSER mkdir -p /home/$PERMUSER/.cache/lf
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.cache/zsh
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/themes
 doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/icons
-doas -u $PERMUSER mkdir -p /home/$PERMUSER/.local/share/papes
 
 cd $WORKDIRECTORY
 doas -u $PERMUSER curl -LO "https://github.com/catppuccin/gtk/releases/download/v1.0.3/catppuccin-mocha-yellow-standard+default.zip"
 doas -u $PERMUSER unzip catppuccin-mocha-yellow-standard+default.zip
 doas -u $PERMUSER mv catppuccin-mocha-yellow-standard+default catppuccin-yellow
 doas -u $PERMUSER cp -r catppuccin-yellow /home/$PERMUSER/.local/share/themes
-rm -rf $WORKDIRECTORY/catppuccin-yellow
 
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-yellow"
 doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu'
-#doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface font-name "Libertinus Serif 12"
+doas -u $PERMUSER dbus-launch gsettings set org.gnome.desktop.interface font-name "Ubuntu 11"
 
 cd $WORKDIRECTORY
 doas -u $PERMUSER git clone https://github.com/zdharma-continuum/fast-syntax-highlighting
