@@ -10,7 +10,6 @@ pipewire-alsa
 wireplumber
 
 # fonts
-ttf-jetbrains-mono-nerd
 ttf-liberation-mono-nerd
 ttf-ubuntu-font-family
 noto-fonts-emoji
