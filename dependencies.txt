@@ -44,6 +44,7 @@ zsh-autosuggestions
 mpv
 yt-dlp
 unzip
+rofi-wayland
 
 # utilities
 gnupg
