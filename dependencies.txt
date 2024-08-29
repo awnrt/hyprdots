@@ -24,6 +24,7 @@ libnotify
 dunst
 btop
 pulsemixer
+less
 
 # lf deps
 lf
