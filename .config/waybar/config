@@ -61,7 +61,7 @@
       "format": "{}",
       "signal": 12,
       "exec" : "sb-mailbox",
-      "interval" : 18000,
+      "interval" : 180,
       "on-click": "sb-mailbox 1",
       "on-click-right": "sb-mailbox 3",
       "on-click-middle": "sb-mailbox 2",
