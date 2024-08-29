@@ -1,6 +1,4 @@
-#   Hyprland rice
+#   hyprland dots
+Run ```rice.sh``` to install all dependencies, scripts and config files.
 
-## v2.0
-
-:warning: Change $PERMUSER variable in **rice.sh** to your username.
-
+These include rewritten [Luke Smith's scripts](https://github.com/LukeSmithxyz/voidrice/tree/master/.local/bin/statusbar) to work with waybar under Hyprland.
