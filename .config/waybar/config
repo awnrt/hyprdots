@@ -5,7 +5,7 @@
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["custom/memory","custom/doppler","custom/forecast","custom/nettraf","custom/microphone","custom/volume","custom/clock","custom/internet","tray"],
+    "modules-right": ["custom/memory","custom/doppler","custom/forecast","custom/mailbox","custom/nettraf","custom/microphone","custom/volume","custom/clock","custom/internet","tray"],
     
     "hyprland/window": {
         "format": "{}",
@@ -54,6 +54,18 @@
       "on-click-right": "sb-forecast 3",
       "on-click-middle": "sb-forecast 2",
       "on-click-backward": "sb-forecast 6"
+    },
+
+    "custom/mailbox" : {
+      "tooltip": false,
+      "format": "{}",
+      "signal": 12,
+      "exec" : "sb-mailbox",
+      "interval" : 18000,
+      "on-click": "sb-mailbox 1",
+      "on-click-right": "sb-mailbox 3",
+      "on-click-middle": "sb-mailbox 2",
+      "on-click-backward": "sb-mailbox 6"
     },
 
     "custom/nettraf" : {

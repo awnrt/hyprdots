@@ -19,5 +19,4 @@ After $secs seconds, new clicks will also automatically update the doppler RADAR
 	6) hyprctl dispatch exec "kitty -e \"$EDITOR\" \"$0\"" ;;
 esac
 
-[ $(($(date '+%s') - $(stat -c %Y "$doppler"))) -gt "$secs" ] && getdoppler
 echo 🌅
