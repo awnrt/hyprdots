@@ -11,7 +11,6 @@ wireplumber
 
 # fonts
 ttf-liberation-mono-nerd
-ttf-ubuntu-font-family
 noto-fonts-emoji
 fontconfig
 

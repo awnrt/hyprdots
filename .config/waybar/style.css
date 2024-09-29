@@ -8,8 +8,8 @@
 }
 
 #waybar {
-    color: #cdd6f4;
-    background: #1e1e2e; 
+    color: #EBDBB2;
+    background: #282828; 
 }
 
 tooltip {
@@ -21,16 +21,16 @@ tooltip {
 }
 
 #workspaces button {
-    color: #6c7086;
+    color: #a89984;
 }
 
 #workspaces button.active {
-    color: #cdd6f4;
-    background: #1e1e2e;
+    color: #EBDBB2;
+    background: #282828;
 }
 
 #window {
-    color: #cdd6f4;
+    color: #EBDBB2;
     margin-left: 15px;
 }
 
