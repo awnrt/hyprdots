@@ -50,3 +50,4 @@ rofi-wayland
 gnupg
 openssh-openrc
 fakeroot
+lxqt-policykit
